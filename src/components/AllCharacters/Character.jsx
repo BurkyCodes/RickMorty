@@ -33,7 +33,7 @@ const Character = () => {
         </div>
       ) : character ? (
         <>
-          <div className="mt-10  flex items-start justify-evenly">
+          <div className="mt-10 sm:flex-row flex-col-reverse flex items-start justify-evenly">
             <div>
               <img src={character?.image} alt="" />
             </div>
