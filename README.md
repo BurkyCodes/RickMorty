@@ -41,8 +41,20 @@ A React app displaying characters from Rick and Morty API, allowing users to fav
 - [Rick and Morty API](https://rickandmortyapi.com/)
 
 
+
 ## Installation
 
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/yourusername/rick-morty-favorites.git
+1. Clone the repository:
+
+2. Navigate into the project directory:
+
+3. Install dependencies:
+
+4. Start the development server:
+
+```bash
+git clone https://github.com/yourusername/rick-morty-favorites.git
+cd rick-morty-favorites
+npm install
+npm run dev
+
