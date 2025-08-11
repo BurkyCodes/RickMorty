@@ -12,12 +12,12 @@ const Header = () => {
         <ul className="flex items-center gap-4">
           <NavLink 
           to={""}
-          className={({isActive}) => `uppercase tracking-wider text-2xl text-[#253900] ${isActive ? "border-b-2 font-semibold ":""}`}>
+          className={({isActive}) => `uppercase tracking-wider text-lg sm:text-2xl text-[#253900] ${isActive ? "border-b-2 font-semibold ":""}`}>
             Characters
             </NavLink>
           <NavLink
           to={"episodes"} 
-                   className={({isActive}) => `uppercase tracking-wider text-2xl text-[#253900] ${isActive ? "border-b-2 font-semibold ":""}`}>
+                   className={({isActive}) => `uppercase tracking-wider text-lg sm:text-2xl text-[#253900] ${isActive ? "border-b-2 font-semibold ":""}`}>
               Episodes
             </NavLink>
         </ul>
