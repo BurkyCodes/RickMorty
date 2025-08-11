@@ -24,8 +24,7 @@ const AllCharacters = () => {
       filter: {
         name: search,
       },
-    },
-    fetchPolicy: "no-cache",
+    }
   });
 
   const totalCharacters = 826;

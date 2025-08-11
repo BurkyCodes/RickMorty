@@ -33,6 +33,7 @@ export const getEpisodeById = gql`
   query Episode($id: ID!) {
     episode(id: $id) {
       characters {
+        id
         name
         gender
         image

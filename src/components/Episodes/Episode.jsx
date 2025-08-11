@@ -14,12 +14,11 @@ const Episode = () => {
   const { loading, data } = useQuery(getEpisodeById, {
     variables: {
       id,
-    },
-    fetchPolicy: "no-cache",
+    }
   });
   useEffect(() => {
     if(data?.episode){
-      console.log(data?.episode)
+      // console.log(data?.episode)
       setEpisode(data?.episode)
     }
   },[loading,data])

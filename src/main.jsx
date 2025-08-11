@@ -7,8 +7,18 @@ import { BrowserRouter } from 'react-router-dom';
 
 const client  = new ApolloClient({
   uri:"https://rickandmortyapi.com/graphql",
-  cache:new InMemoryCache()
+  cache:new InMemoryCache(),
+    defaultOptions: {
+    watchQuery: {
+      fetchPolicy: 'cache-and-network', 
+    },
+  },
 })
+
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

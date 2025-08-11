@@ -21,8 +21,7 @@ const Episodes = () => {
       filter: {
         name: search,
       },
-    },
-    fetchPolicy: "no-cache",
+    }
   });
 
   // Update URL params whenever search/page changes
