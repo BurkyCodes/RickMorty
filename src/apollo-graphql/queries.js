@@ -8,6 +8,7 @@ export const getCharacters = gql`
         name
         gender
         image
+        species
       }
     }
   }

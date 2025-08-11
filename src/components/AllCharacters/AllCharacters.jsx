@@ -9,8 +9,9 @@ import Filter from "../Filter/Filter";
 
 const AllCharacters = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const initialSpecies = searchParams.get("species") || "";
+  const [species, setSpecies] = useState(initialSpecies);
 
-  // Read initial state from URL
   const initialSearch = searchParams.get("q") || "";
   const initialPage = Number(searchParams.get("page")) || 1;
 
@@ -23,23 +24,28 @@ const AllCharacters = () => {
       page,
       filter: {
         name: search,
+        species: species || undefined,
       },
-    }
+    },
   });
 
   const totalCharacters = 826;
   const perPage = 20;
   const totalPages = Math.ceil(totalCharacters / perPage);
 
-  // Keep URL in sync when page or search changes
+  const handleSpeciesChange = (e) => {
+    setSpecies(e.target.value);
+    setPage(1);
+  };
+
   useEffect(() => {
     const params = {};
     if (search) params.q = search;
+    if (species) params.species = species;
     if (page > 1) params.page = page;
     setSearchParams(params);
-  }, [search, page, setSearchParams]);
+  }, [search, species, page, setSearchParams]);
 
-  // Set characters when data loads
   useEffect(() => {
     if (data?.characters?.results) {
       setCharacters(data.characters.results);
@@ -59,8 +65,23 @@ const AllCharacters = () => {
           setSearch(val);
           setPage(1);
         }}
-        initialValue={search} 
+        initialValue={search}
       />
+      <div className="species-filter my-2">
+        <label htmlFor="species-select" className="mr-2 text-[#253900]">
+          Filter by species:
+        </label>
+        <select
+          id="species-select"
+          value={species}
+          onChange={handleSpeciesChange}
+          className="p-1 rounded border border-2"
+        >
+          <option value="">All</option>
+          <option value="human">Human</option>
+          <option value="alien">Alien</option>
+        </select>
+      </div>
 
       {loading ? (
         <div className="text-[#08CB00] h-[100px] font-semibold text-lg">
