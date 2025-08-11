@@ -16,13 +16,11 @@
 - [License](#license)
 - [Contact](#contact)
 
----
 
 ## Project Overview
 
 A React app displaying characters from Rick and Morty API, allowing users to favorite/unfavorite characters with persistence using Context API and Local Storage.
 
----
 
 ## Features
 
@@ -32,7 +30,6 @@ A React app displaying characters from Rick and Morty API, allowing users to fav
 - Character details page with routing.
 - Responsive design.
 
----
 
 ## Tech Stack
 
@@ -43,7 +40,6 @@ A React app displaying characters from Rick and Morty API, allowing users to fav
 - CSS / Tailwind CSS (if applicable)
 - [Rick and Morty API](https://rickandmortyapi.com/)
 
----
 
 ## Installation
 
